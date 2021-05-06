@@ -32,7 +32,59 @@ body {
   font-weight: 400;
 }
 
-// FE Mentor styles
+// Main style //
+.main {
+  &__logo {
+    margin: 2rem;
+    height: 1.5rem;
+  }
+
+  &__text {
+    text-align: center;
+    color: $pinkish-red;
+    margin: 3rem 1rem;
+
+    &__heading {
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+
+      &--black {
+        display: block;
+        font-weight: 700;
+        color: $grayish-red;
+      }
+    }
+
+    &__paragraph {
+      margin-top: 1rem;
+      line-height: 1.5em;
+    }
+
+    &__form {
+      margin-top: 1rem;
+
+      &__input {
+        border-radius: 25px;
+        border-color: $pinkish-red;
+        border-style: solid;
+        border-width: 1px;
+        padding: 1em;
+        width: 80%;
+
+        &::placeholder {
+          color: $pinkish-red;
+          padding-left: 0.5rem;
+          font-family: 'Josefin Sans', sans-serif;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+// Media queries //
+
+// FE Mentor style //
 
 .attribution {
   font-size: 11px;
