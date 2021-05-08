@@ -35,9 +35,13 @@ body {
 
 // Main style //
 .main {
-  &__logo {
+  &__logo__mobile {
     margin: 2rem;
     height: 1.5rem;
+  }
+
+  &__logo__desktop {
+    display: none;
   }
 
   &__hero {
@@ -109,15 +113,49 @@ body {
     }
   }
 }
+
 // Media queries //
+
+@media only screen and (min-width: 600px) {
+  .main {
+    display: flex;
+    height: 100vh;
+
+    &__logo__mobile,
+    &__hero {
+      display: none;
+    }
+
+    &__logo__desktop {
+      display: inline;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      flex: 1;
+    }
+
+    .photo {
+      flex: 1;
+      background-image: url('../images/hero-desktop.jpg');
+      background-size: cover;
+    }
+  }
+}
 
 // FE Mentor style //
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  display: none;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+  display: none;
 }
