@@ -216,10 +216,11 @@ body {
   }
   .main__text__heading {
     font-size: 4rem;
+    line-height: 5rem;
   }
   .main__text__paragraph {
     margin-top: 2rem;
-    width: 25rem;
+    max-width: 50rem;
     line-height: 2rem;
   }
   .main__text__form__input {
