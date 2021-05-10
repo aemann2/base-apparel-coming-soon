@@ -24,11 +24,12 @@
         </p>
         <form class='main__text__form' action="">
           <div class='main__text__form__wrapper'>
-            <input class='main__text__form__input' type="text" placeholder="Email Address">
+            <input class='main__text__form__input' type="text" id='email' name='email' placeholder="Email Address">
+            <img class='main__text__form__error' id='error' src="./images/icon-error.svg">
             <input class='main__text__form__submit' type="submit" value=''>
           </div>
+          <p class='main__text__form__msg' id='msg'>Please provide a valid email</p>
         </form>
-
       </div>
     </div>
     <div class="photo"></div>
@@ -40,6 +41,29 @@
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
+  <script>
+    const form = document.querySelector('form');
+    const errorIcon = document.querySelector('#error');
+    const errorIconStyle = getComputedStyle(errorIcon).display;
+    const errorMsg = document.querySelector('#msg');
+    const errorMsgStyle = getComputedStyle(errorMsg).display;
+
+    const validateEmail = (e, email) => {
+      e.preventDefault();
+
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+        form.email.value = '';
+        errorIcon.style.display = 'none';
+        errorMsg.style.display = 'none';
+      } else {
+        errorIconStyle === "none" ? errorIcon.style = "display: inline" : errorIcon.style = "display: none";
+
+        errorMsgStyle === "none" ? errorMsg.style = "display: block" : errorMsg.style = "display: none";
+      }
+    }
+
+    form.addEventListener('submit', (e) => validateEmail(e, form.email.value));
+  </script>
 </body>
 
 </html>
