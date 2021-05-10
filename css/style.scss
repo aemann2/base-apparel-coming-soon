@@ -118,8 +118,51 @@ body {
 
 @media only screen and (min-width: 600px) {
   .main {
+    &__logo__mobile {
+      height: 3rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__hero {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 600px;
+    }
+
+    &__text {
+      &__heading {
+        font-size: 3.5rem;
+      }
+
+      &__paragraph {
+        font-size: 1.5rem;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &__form {
+        &__input {
+          width: 55%;
+        }
+
+        &__submit {
+          left: 70%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .main {
     display: flex;
     height: 100vh;
+    background-image: url('/images/bg-pattern-desktop.svg');
+    background-size: cover;
 
     &__logo__mobile,
     &__hero {
@@ -128,15 +171,43 @@ body {
 
     &__logo__desktop {
       display: inline;
+      width: 10rem;
+      margin-left: 10rem;
     }
 
     &__text {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: left;
       flex: 1;
+
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        text-align: left;
+      }
+
+      &__heading {
+        font-size: 4rem;
+      }
+
+      &__paragraph {
+        margin-top: 2rem;
+        width: 25rem;
+        line-height: 2rem;
+      }
+
+      &__form {
+        &__input {
+          width: 25rem;
+        }
+
+        &__submit {
+          left: 85%;
+        }
+      }
     }
 
     .photo {
